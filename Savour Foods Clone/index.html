@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Savour Foods | Food Ordering</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ======================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#" onclick="showPage('home')">
+
+            <span class="logo-box">
+                <i class="bi bi-shop"></i>
+            </span>
+
+            <span>SAVOUR</span>
+
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="#"
+                        data-page="home"
+                        onclick="showPage('home')"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#"
+                        data-page="menu"
+                        onclick="showPage('menu')"
+                    >
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#"
+                        data-page="offers"
+                        onclick="showPage('offers')"
+                    >
+                        Offers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#"
+                        data-page="about"
+                        onclick="showPage('about')"
+                    >
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#"
+                        data-page="contact"
+                        onclick="showPage('contact')"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-icon-btn"
+                    onclick="openWishlist()"
+                    title="Wishlist"
+                >
+                    <i class="bi bi-heart"></i>
+                    <span id="wishlistCount">0</span>
+                </button>
+
+                <button
+                    class="nav-icon-btn"
+                    onclick="openCart()"
+                    title="Cart"
+                >
+                    <i class="bi bi-cart3"></i>
+                    <span id="cartCount">0</span>
+                </button>
+
+                <button
+                    class="login-btn"
+                    onclick="openLogin()"
+                >
+                    <i class="bi bi-person"></i>
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ======================================================
+     HOME PAGE
+====================================================== -->
+
+<main id="homePage" class="page active-page">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="hero-tag">
+                        <i class="bi bi-star-fill"></i>
+                        Pakistan's Favourite Food
+                    </span>
+
+                    <h1>
+                        Delicious food.
+                        <span>Made for you.</span>
+                    </h1>
+
+                    <p>
+                        Enjoy delicious traditional Pakistani food,
+                        prepared fresh and delivered right to your door.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="btn btn-primary btn-lg"
+                            onclick="showPage('menu')"
+                        >
+                            Order Now
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <button
+                            class="btn btn-outline-dark btn-lg"
+                            onclick="showPage('menu')"
+                        >
+                            Explore Menu
+                        </button>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>25+</strong>
+                            <span>Years</span>
+                        </div>
+
+                        <div>
+                            <strong>50+</strong>
+                            <span>Dishes</span>
+                        </div>
+
+                        <div>
+                            <strong>4.8</strong>
+                            <span>Rating</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="hero-visual">
+
+                        <div class="hero-circle">
+
+                            <div class="hero-food">
+                                🍗
+                            </div>
+
+                        </div>
+
+                        <div class="floating-card delivery-card">
+
+                            <div class="floating-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+
+                            <div>
+                                <strong>Fast Delivery</strong>
+                                <small>30–45 minutes</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="floating-card rating-card">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <strong>4.8/5</strong>
+
+                            <small>
+                                10k+ happy customers
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        What are you craving?
+                    </h2>
+                </div>
+
+                <button
+                    class="text-button"
+                    onclick="showPage('menu')"
+                >
+                    View all
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-6 col-md-3">
+                    <div
+                        class="category-card"
+                        onclick="filterCategory('rice'); showPage('menu')"
+                    >
+                        <div class="category-icon">
+                            🍚
+                        </div>
+                        <h5>Rice & Pulao</h5>
+                        <small>8 items</small>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-md-3">
+                    <div
+                        class="category-card"
+                        onclick="filterCategory('chicken'); showPage('menu')"
+                    >
+                        <div class="category-icon">
+                            🍗
+                        </div>
+                        <h5>Chicken</h5>
+                        <small>12 items</small>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-md-3">
+                    <div
+                        class="category-card"
+                        onclick="filterCategory('bbq'); showPage('menu')"
+                    >
+                        <div class="category-icon">
+                            🍖
+                        </div>
+                        <h5>BBQ</h5>
+                        <small>10 items</small>
+                    </div>
+                </div>
+
+
+                <div class="col-6 col-md-3">
+                    <div
+                        class="category-card"
+                        onclick="filterCategory('drinks'); showPage('menu')"
+                    >
+                        <div class="category-icon">
+                            🥤
+                        </div>
+                        <h5>Drinks</h5>
+                        <small>7 items</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+
+    <section class="section light-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CUSTOMER FAVOURITES
+                    </span>
+
+                    <h2>
+                        Popular dishes
+                    </h2>
+
+                </div>
+
+                <button
+                    class="text-button"
+                    onclick="showPage('menu')"
+                >
+                    See menu
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <div
+                id="popularProducts"
+                class="row g-4"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="center-heading">
+
+                <span class="section-label">
+                    WHY SAVOUR
+                </span>
+
+                <h2>
+                    Good food. Good mood.
+                </h2>
+
+                <p>
+                    Everything we do is focused on giving you
+                    a great food experience.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-3">
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+
+                        <h4>
+                            Quality Ingredients
+                        </h4>
+
+                        <p>
+                            We use quality ingredients and
+                            carefully selected spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning"></i>
+                        </div>
+
+                        <h4>
+                            Fast Delivery
+                        </h4>
+
+                        <p>
+                            Your favourite food arrives fresh,
+                            hot and on time.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+
+                        <h4>
+                            Made With Love
+                        </h4>
+
+                        <p>
+                            Traditional recipes prepared with
+                            care and passion.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     MENU PAGE
+====================================================== -->
+
+<main id="menuPage" class="page">
+
+    <section class="page-banner">
+
+        <div class="container text-center">
+
+            <span class="section-label">
+                OUR MENU
+            </span>
+
+            <h1>
+                Find your favourite food
+            </h1>
+
+            <p>
+                Freshly prepared and ready to order.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="menu-tools">
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search food..."
+                        oninput="renderProducts()"
+                    >
+
+                </div>
+
+
+                <select
+                    id="sortSelect"
+                    class="form-select sort-select"
+                    onchange="renderProducts()"
+                >
+
+                    <option value="default">
+                        Recommended
+                    </option>
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="rating">
+                        Highest Rated
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="category-tabs">
+
+                <button
+                    class="category-tab active"
+                    data-category="all"
+                    onclick="filterCategory('all')"
+                >
+                    All
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="rice"
+                    onclick="filterCategory('rice')"
+                >
+                    🍚 Rice
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="chicken"
+                    onclick="filterCategory('chicken')"
+                >
+                    🍗 Chicken
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="bbq"
+                    onclick="filterCategory('bbq')"
+                >
+                    🍖 BBQ
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="sides"
+                    onclick="filterCategory('sides')"
+                >
+                    🍟 Sides
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="drinks"
+                    onclick="filterCategory('drinks')"
+                >
+                    🥤 Drinks
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-category="desserts"
+                    onclick="filterCategory('desserts')"
+                >
+                    🍰 Desserts
+                </button>
+
+            </div>
+
+
+            <div
+                id="menuProducts"
+                class="row g-4 mt-3"
+            ></div>
+
+
+            <div
+                id="noResults"
+                class="empty-state d-none"
+            >
+
+                <div>
+                    🔍
+                </div>
+
+                <h3>
+                    No food found
+                </h3>
+
+                <p>
+                    Try a different search or category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     OFFERS PAGE
+====================================================== -->
+
+<main id="offersPage" class="page">
+
+    <section class="page-banner">
+
+        <div class="container text-center">
+
+            <span class="section-label">
+                SPECIAL OFFERS
+            </span>
+
+            <h1>
+                Delicious deals
+            </h1>
+
+            <p>
+                Save more on your favourite meals.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+
+                    <div class="big-offer red-offer">
+
+                        <div>
+
+                            <span>
+                                ONLINE SPECIAL
+                            </span>
+
+                            <h2>
+                                20% OFF
+                            </h2>
+
+                            <p>
+                                Get 20% off your order
+                                with code:
+                            </p>
+
+                            <strong class="coupon-code">
+                                WELCOME20
+                            </strong>
+
+                            <br>
+
+                            <button
+                                class="btn btn-light mt-3"
+                                onclick="useCoupon('WELCOME20')"
+                            >
+                                Order Now
+                            </button>
+
+                        </div>
+
+                        <div class="offer-emoji">
+                            🎁
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="big-offer dark-offer">
+
+                        <div>
+
+                            <span>
+                                FAMILY DEAL
+                            </span>
+
+                            <h2>
+                                Family Feast
+                            </h2>
+
+                            <p>
+                                Enjoy a delicious family
+                                meal at a special price.
+                            </p>
+
+                            <strong class="coupon-code">
+                                FAMILY20
+                            </strong>
+
+                            <br>
+
+                            <button
+                                class="btn btn-light mt-3"
+                                onclick="useCoupon('FAMILY20')"
+                            >
+                                Get Deal
+                            </button>
+
+                        </div>
+
+                        <div class="offer-emoji">
+                            🍗
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="small-offer">
+
+                        <span>
+                            WEEKEND
+                        </span>
+
+                        <h4>
+                            Free Drink
+                        </h4>
+
+                        <p>
+                            On orders above Rs. 2000.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="small-offer">
+
+                        <span>
+                            NEW USER
+                        </span>
+
+                        <h4>
+                            20% OFF
+                        </h4>
+
+                        <p>
+                            Your first online order.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="small-offer">
+
+                        <span>
+                            DELIVERY
+                        </span>
+
+                        <h4>
+                            Fast & Fresh
+                        </h4>
+
+                        <p>
+                            Delivery in 30–45 minutes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     ABOUT PAGE
+====================================================== -->
+
+<main id="aboutPage" class="page">
+
+    <section class="page-banner">
+
+        <div class="container text-center">
+
+            <span class="section-label">
+                OUR STORY
+            </span>
+
+            <h1>
+                Food made with passion
+            </h1>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <div class="about-visual">
+
+                        <div class="about-food">
+                            🍛
+                        </div>
+
+                        <div class="about-badge">
+
+                            <strong>
+                                25+
+                            </strong>
+
+                            <span>
+                                Years of flavour
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <span class="section-label">
+                        ABOUT SAVOUR
+                    </span>
+
+                    <h2 class="about-title">
+                        Traditional flavours,
+                        modern convenience.
+                    </h2>
+
+                    <p>
+                        We believe great food should be delicious,
+                        fresh and easy to order.
+                    </p>
+
+                    <p>
+                        Our menu brings together traditional Pakistani
+                        flavours, quality ingredients and meals prepared
+                        with care.
+                    </p>
+
+                    <p>
+                        Whether you are ordering lunch for yourself,
+                        dinner for your family or food for a gathering,
+                        we want every meal to feel special.
+                    </p>
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="showPage('menu')"
+                    >
+                        Explore Menu
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     CONTACT PAGE
+====================================================== -->
+
+<main id="contactPage" class="page">
+
+    <section class="page-banner">
+
+        <div class="container text-center">
+
+            <span class="section-label">
+                CONTACT US
+            </span>
+
+            <h1>
+                We're here to help
+            </h1>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <span class="section-label">
+                        GET IN TOUCH
+                    </span>
+
+                    <h2 class="contact-title">
+                        Have a question?
+                    </h2>
+
+                    <p class="muted">
+                        Our team is ready to help with
+                        your questions and orders.
+                    </p>
+
+
+                    <div class="contact-details">
+
+                        <div>
+                            <span class="contact-icon">
+                                <i class="bi bi-telephone"></i>
+                            </span>
+
+                            <div>
+                                <strong>Phone</strong>
+                                <p>051-111-SAVOUR</p>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <span class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+
+                            <div>
+                                <strong>Email</strong>
+                                <p>support@savourfoods.example</p>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <span class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </span>
+
+                            <div>
+                                <strong>Location</strong>
+                                <p>Islamabad & Rawalpindi</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-7">
+
+                    <form
+                        class="contact-form"
+                        onsubmit="submitContact(event)"
+                    >
+
+                        <h4>
+                            Send us a message
+                        </h4>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label>
+                                    Name
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label>
+                                    Subject
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label>
+                                    Message
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    rows="5"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <button
+                                    class="btn btn-primary"
+                                    type="submit"
+                                >
+                                    Send Message
+                                    <i class="bi bi-send"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ======================================================
+     CART OFFCANVAS
+====================================================== -->
+
+<div
+    class="offcanvas offcanvas-end cart-panel"
+    tabindex="-1"
+    id="cartCanvas"
+>
+
+    <div class="offcanvas-header">
+
+        <h4>
+            <i class="bi bi-cart3"></i>
+            Your Cart
+        </h4>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+        ></button>
+
+    </div>
+
+
+    <div class="offcanvas-body">
+
+        <div id="cartItems"></div>
+
+        <div id="cartFooter">
+
+            <div class="cart-summary-line">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cartSubtotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <div class="cart-summary-line">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong>
+                    Rs. 150
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary w-100 mt-3"
+                onclick="openCheckout()"
+            >
+                Checkout
+                <i class="bi bi-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     PRODUCT MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="productModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content product-modal">
+
+            <div class="modal-header border-0">
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div id="productModalContent"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     LOGIN MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content login-modal">
+
+            <div class="modal-header border-0">
+
+                <h4>
+                    Welcome Back
+                </h4>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="login-icon">
+                    <i class="bi bi-person"></i>
+                </div>
+
+                <p class="text-center muted">
+                    Login to manage your orders.
+                </p>
+
+
+                <form onsubmit="loginUser(event)">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="loginEmail"
+                        class="form-control mb-3"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        class="form-control mb-3"
+                        type="password"
+                        placeholder="Password"
+                        required
+                    >
+
+
+                    <button
+                        class="btn btn-primary w-100"
+                        type="submit"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="login-divider">
+                    OR
+                </div>
+
+
+                <button
+                    class="social-login"
+                    onclick="demoGoogleLogin()"
+                >
+                    <i class="bi bi-google"></i>
+                    Continue with Google
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     WISHLIST MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="wishlistModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4>
+                    <i class="bi bi-heart-fill text-danger"></i>
+                    My Favourites
+                </h4>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div
+                id="wishlistItems"
+                class="modal-body"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     CHECKOUT MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="checkoutModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <h4>
+                        Checkout
+                    </h4>
+
+                    <small class="muted">
+                        Complete your order
+                    </small>
+                </div>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form
+                    id="checkoutForm"
+                    onsubmit="placeOrder(event)"
+                >
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                id="customerName"
+                                class="form-control"
+                                type="text"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label>
+                                Phone
+                            </label>
+
+                            <input
+                                id="customerPhone"
+                                class="form-control"
+                                type="tel"
+                                placeholder="03XX-XXXXXXX"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-12">
+
+                            <label>
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="customerAddress"
+                                class="form-control"
+                                rows="3"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label>
+                                City
+                            </label>
+
+                            <select
+                                id="customerCity"
+                                class="form-select"
+                                required
+                            >
+
+                                <option value="">
+                                    Select City
+                                </option>
+
+                                <option>
+                                    Islamabad
+                                </option>
+
+                                <option>
+                                    Rawalpindi
+                                </option>
+
+                                <option>
+                                    Lahore
+                                </option>
+
+                                <option>
+                                    Karachi
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label>
+                                Payment
+                            </label>
+
+                            <select
+                                id="paymentMethod"
+                                class="form-select"
+                            >
+
+                                <option>
+                                    Cash on Delivery
+                                </option>
+
+                                <option>
+                                    Card
+                                </option>
+
+                                <option>
+                                    Mobile Wallet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12">
+
+                            <label>
+                                Order Type
+                            </label>
+
+                            <div class="order-type">
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="orderType"
+                                        value="delivery"
+                                        checked
+                                    >
+
+                                    <span>
+                                        <i class="bi bi-truck"></i>
+                                        Delivery
+                                    </span>
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="orderType"
+                                        value="pickup"
+                                    >
+
+                                    <span>
+                                        <i class="bi bi-shop"></i>
+                                        Pickup
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12">
+
+                            <div class="checkout-total">
+
+                                <span>
+                                    Order Total
+                                </span>
+
+                                <strong id="checkoutTotal">
+                                    Rs. 0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 btn-lg"
+                            >
+                                Place Order
+                                <i class="bi bi-check2-circle"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     ORDER SUCCESS MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="successModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content success-modal">
+
+            <div class="success-icon">
+                <i class="bi bi-check-lg"></i>
+            </div>
+
+            <h2>
+                Order Placed!
+            </h2>
+
+            <p>
+                Thank you for ordering.
+            </p>
+
+            <div class="order-number">
+                Order #<span id="orderNumber"></span>
+            </div>
+
+            <p class="muted">
+                Your food will be prepared and delivered shortly.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                onclick="showTracking()"
+            >
+                Track Order
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     ORDER TRACKING MODAL
+====================================================== -->
+
+<div
+    class="modal fade"
+    id="trackingModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <h4>
+                        Track Order
+                    </h4>
+
+                    <small class="muted">
+                        #<span id="trackingNumber"></span>
+                    </small>
+                </div>
+
+                <button
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="estimated">
+
+                    <div class="estimated-icon">
+                        <i class="bi bi-truck"></i>
+                    </div>
+
+                    <div>
+                        <small>
+                            Estimated arrival
+                        </small>
+
+                        <strong>
+                            30–45 minutes
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            <i class="bi bi-check"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Order Confirmed
+                            </strong>
+
+                            <small>
+                                Your order has been received.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item completed">
+
+                        <div class="timeline-dot">
+                            <i class="bi bi-check"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Preparing Food
+                            </strong>
+
+                            <small>
+                                Your food is being prepared.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item active">
+
+                        <div class="timeline-dot">
+                            <i class="bi bi-truck"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Out for Delivery
+                            </strong>
+
+                            <small>
+                                Your order is on its way.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            <i class="bi bi-house"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Delivered
+                            </strong>
+
+                            <small>
+                                Enjoy your meal!
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     TOAST
+====================================================== -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div
+        id="appToast"
+        class="toast"
+        role="alert"
+    >
+
+        <div class="toast-header">
+
+            <i class="bi bi-check-circle-fill text-success me-2"></i>
+
+            <strong class="me-auto">
+                Savour
+            </strong>
+
+            <button
+                class="btn-close"
+                data-bs-dismiss="toast"
+            ></button>
+
+        </div>
+
+        <div
+            id="toastMessage"
+            class="toast-body"
+        >
+            Done!
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <a
+                    class="footer-brand"
+                    href="#"
+                    onclick="showPage('home')"
+                >
+
+                    <span class="logo-box">
+                        <i class="bi bi-shop"></i>
+                    </span>
+
+                    SAVOUR
+
+                </a>
+
+                <p>
+                    Delicious Pakistani food prepared fresh
+                    and delivered to your door.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a href="#" onclick="showPage('home')">
+                    Home
+                </a>
+
+                <a href="#" onclick="showPage('menu')">
+                    Menu
+                </a>
+
+                <a href="#" onclick="showPage('offers')">
+                    Offers
+                </a>
+
+                <a href="#" onclick="showPage('about')">
+                    About
+                </a>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+                    Support
+                </h5>
+
+                <a href="#" onclick="showPage('contact')">
+                    Contact
+                </a>
+
+                <a href="#" onclick="openLogin()">
+                    Account
+                </a>
+
+                <a href="#" onclick="showTracking()">
+                    Track Order
+                </a>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <h5>
+                    Newsletter
+                </h5>
+
+                <p>
+                    Subscribe for special offers.
+                </p>
+
+                <form
+                    class="newsletter"
+                    onsubmit="subscribeNewsletter(event)"
+                >
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        required
+                    >
+
+                    <button>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Savour Foods Clone
+            </span>
+
+            <span>
+                Front-end demonstration
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
